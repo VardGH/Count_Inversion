@@ -17,17 +17,16 @@ int count = 0;
 		//arr[k++] = (vec[i] <= vec[j]) ? vec[i++] : vec[j++];
 		if (vec[i] > vec[j]) {
 			arr[k++] = vec[j++];
+			count += mid - i + 1;
 		}
 		else {
 			arr[k++] = vec[i++];
-			count += j - 1 - mid;
 		}
 	}
 
-		while (i <= mid) {
-			arr[k++] = vec[i++];
-			count += right - mid;
-		}
+	while (i <= mid) {
+		arr[k++] = vec[i++];
+	}
 
 	while (j<=right){
 		arr[k++] = vec[j++];
@@ -62,7 +61,7 @@ void Print(std::vector<int>& vec)
 
 int main()
 {
-	std::vector<int> myvector{2,4,3,1};
+	std::vector<int> myvector{7,8,1,9,4,3};
 
 	/*srand(time(NULL));
 	for (auto& elem : myvector) {
